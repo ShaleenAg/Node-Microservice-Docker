@@ -6,7 +6,7 @@ services:
         restart: always
         build: ./Content
         ports:
-            - "4000:3000"
+            - "3000:3000"
         external_links:
             - mongo
 
@@ -15,7 +15,7 @@ services:
         restart: always
         build: ./Interaction
         ports:
-            - "4005:3002"
+            - "3002:3002"
         external_links:
             - mongo
 
@@ -24,7 +24,7 @@ services:
         restart: always
         build: ./User
         ports:
-            - "4003:3001"
+            - "3001:3001"
         external_links:
             - mongo
 
@@ -32,4 +32,4 @@ services:
         container_name: mongo
         image: mongo
         ports:
-            - "40000:27017"
+            - "27017:27017"
