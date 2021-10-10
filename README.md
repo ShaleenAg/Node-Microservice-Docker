@@ -8,6 +8,10 @@ This is an example of a Node based Microservivce which uses MongoDB running on D
     <li>User Interaction API: This API is responsible for user interaction such as read events, like events</li>
 </ul>
 
+## Usage
+
+Navigate into the  folder where you pulled the repo. Make sure docker running is running. Run the command `docker-compose up` to build/run the microservice. The specific API usage has been given below.
+
 ## Content API
 Content API keeps track of the following things:
 
