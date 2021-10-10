@@ -1,0 +1,35 @@
+version: "3.7"
+
+services:
+    content:
+        container_name: content
+        restart: always
+        build: ./Content
+        ports:
+            - "3000:3000"
+        external_links:
+            - mongo
+
+    interaction:
+        container_name: interaction
+        restart: always
+        build: ./Interaction
+        ports:
+            - "3002:3002"
+        external_links:
+            - mongo
+
+    user:
+        container_name: user
+        restart: always
+        build: ./User
+        ports:
+            - "3001:3001"
+        external_links:
+            - mongo
+
+    mongo:
+        container_name: mongo
+        image: mongo
+        ports:
+            - "27017:27017"
