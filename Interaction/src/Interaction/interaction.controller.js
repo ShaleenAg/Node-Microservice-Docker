@@ -44,6 +44,11 @@ const addReadCount = async (req, res) => {
 }
 
 const addLikes = async (req, res) => {
+  if (!req.body.contentID || !req.body.userID) {
+    return res
+      .status(404)
+      .send('Please attach the userID/contentID in the request')
+  }
   const user = await User.findOneAndUpdate(
     { userID: req.body.userID },
     {
@@ -56,8 +61,9 @@ const addLikes = async (req, res) => {
     .lean()
     .exec()
   if (!user) {
-    return res.status(404).send('User not found')
+    return res.status(400).send('User not found')
   }
+
   const story = await Content.findOneAndUpdate(
     { contentID: req.body.contentID },
     { $push: { likedUser: req.body.userID } },
