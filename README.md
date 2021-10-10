@@ -163,4 +163,9 @@ The APi handles the interaction between the User and the Content.
 
 it consists of the following routes:
 
-`/read
+`/read` : Internal route, gets called when a story is fetched based on the request body if an `userID` is found, it will push into the `readUser` array of the story, the `userID` and increment `readCount`. Otherwise just increments the `readCount`.
+
+`/like`: expects a request body consisting of `userID` and 'contentID`. it pushes into the `likedStory` array of the user the `contentID` and in the `likedUser` array of the story the `userID`.
+
+
+
