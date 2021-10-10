@@ -136,9 +136,9 @@ The API consists of the following routes
 
 The entry point for this API is `http://localhost:3001/` example usage:
 
-```
-POST http://localhost:3001/user/create
+`POST http://localhost:3001/user/create`
 
+```
 {
 	"firstName":"Hello",
 	"lastName":"World",
@@ -163,7 +163,7 @@ which return a response consisting of the user created. e.g.
 
 ## Interaction API
 
-The APi handles the interaction between the User and the Content.
+The API handles the interaction between the User and the Content.
 
 it consists of the following routes:
 
